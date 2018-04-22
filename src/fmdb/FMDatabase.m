@@ -1556,6 +1556,18 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
   return sqlite3_enable_load_extension(_db, onoff);
 }
 
+- (NSString *)loadExtension:(NSString *)path {
+  const char *zFile = [path UTF8String];
+  const char *zProc = [@"0" UTF8String];
+  char *pzErrMsg    = [@"0" UTF8String];
+  int err = sqlite3_load_extension(_db, zFile, zProc, &pzErrMsg);
+  if (err == SQLITE_OK) {
+    return @"SQLITE_OK";
+  } else {
+    return [NSString stringWithUTF8String:pzErrMsg];
+  }
+}
+
 @end
 
 
