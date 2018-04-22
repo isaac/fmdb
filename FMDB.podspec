@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # build the latest stable version of sqlite3
   s.subspec 'standalone' do |ss|
     ss.xcconfig = { 'OTHER_CFLAGS' => '$(inherited) -DFMDB_SQLITE_STANDALONE' }
-    ss.dependency 'sqlite3'
+    ss.dependency 'sqlite3/rtree'
     ss.source_files = 'src/fmdb/FM*.{h,m}'
     ss.exclude_files = 'src/fmdb.m'
   end
