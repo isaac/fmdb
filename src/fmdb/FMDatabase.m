@@ -1550,6 +1550,12 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
     sqlite3_result_error_toobig(context);
 }
 
+#pragma mark Enable or disable extension loading
+
+- (int)enableLoadExtension:(int)onoff {
+  return sqlite3_enable_load_extension(_db, onoff);
+}
+
 @end
 
 

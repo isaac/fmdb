@@ -1297,6 +1297,8 @@ typedef NS_ENUM(int, SqliteValueType) {
 
 - (NSString *)stringFromDate:(NSDate *)date;
 
+- (int)enableLoadExtension:(int)onoff;
+
 @end
 
 
