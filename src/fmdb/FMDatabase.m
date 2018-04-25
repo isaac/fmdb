@@ -1568,6 +1568,11 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
   }
 }
 
+- (NSString *)sqliteVersion {
+  return [NSString stringWithUTF8String:SQLITE_VERSION];
+}
+
+
 @end
 
 

@@ -1301,6 +1301,8 @@ typedef NS_ENUM(int, SqliteValueType) {
 
 - (NSString *)loadExtension:(NSString *)path;
 
+- (NSString *)sqliteVersion;
+
 @end
 
 
